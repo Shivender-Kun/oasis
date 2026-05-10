@@ -49,7 +49,6 @@ function FeatureCard({ feature, delay }: { feature: typeof features[0]; delay: n
     <div
       id={feature.id}
       className="fade-in"
-      style={{ transitionDelay: `${delay}s` }}
       onMouseEnter={(e) => {
         const card = e.currentTarget;
         card.style.borderColor = "var(--primary-subtle)";
@@ -70,7 +69,7 @@ function FeatureCard({ feature, delay }: { feature: typeof features[0]; delay: n
         const icon = card.querySelector<HTMLElement>(".feature-icon");
         if (icon) { icon.style.background = "linear-gradient(135deg, var(--primary-subtle), var(--accent-subtle))"; icon.style.color = "var(--primary)"; icon.style.transform = "none"; icon.style.boxShadow = "none"; }
       }}
-      style={{ background: "#fff", border: "1px solid var(--gray-200)", borderRadius: 16, padding: "36px 28px", textAlign: "center", transition: "all 0.3s cubic-bezier(0.4,0,0.2,1)", position: "relative", overflow: "hidden" }}
+      style={{ transitionDelay: `${delay}s`, background: "#fff", border: "1px solid var(--gray-200)", borderRadius: 16, padding: "36px 28px", textAlign: "center", transition: "all 0.3s cubic-bezier(0.4,0,0.2,1)", position: "relative", overflow: "hidden" }}
     >
       <div className="card-bar" style={{ position: "absolute", top: 0, left: 0, right: 0, height: 4, background: "linear-gradient(90deg, var(--primary), var(--accent))", transform: "scaleX(0)", transition: "transform 0.3s cubic-bezier(0.4,0,0.2,1)", transformOrigin: "left" }} />
       <div className="feature-icon" style={{ width: 64, height: 64, margin: "0 auto 20px", display: "flex", alignItems: "center", justifyContent: "center", background: "linear-gradient(135deg, var(--primary-subtle), var(--accent-subtle))", borderRadius: 12, fontSize: 26, color: "var(--primary)", transition: "all 0.3s" }}>
